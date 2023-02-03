@@ -1,0 +1,132 @@
+.p {
+    &-relative {
+        position: relative;
+    }
+    &-absolute {
+        position: absolute;
+    }
+}
+
+// border
+.b {
+
+    &-radius-5 {
+        border-radius: 5px;
+    }
+
+}
+
+// height _ width
+.h {
+ &-auto {
+    height: auto;
+ } 
+ &-100 {
+    height: 100%;
+ }
+}
+
+.w {
+    &-100 {
+        width: 100%;
+    }
+    &-50 {
+        width: 50%;
+    }
+}
+
+
+// background color
+
+.background{
+    &-secondry {
+        background-color: $secondry-background;
+    }
+    &-main {
+        background-color: $main-background;
+    }
+
+    &-primary {
+        background-color: $color-primary;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.message{
+    &-container {
+        position: relative;
+        height: 500px; 
+        background-color: $secondry-background;
+        border: 1px solid $color-primary;
+        overflow: hidden scroll;
+        border-radius: 5px;
+        margin-bottom: $padding-margin-m;
+        @include scrollbars(5px, $color-primary, $secondry-background);
+        @include respond(tablet) {
+            height: auto; 
+            position: fixed;
+            top:0;
+            left:0;
+            bottom: 30px;
+            right: 0;
+            margin-bottom:$padding-margin-m;
+            border-radius: 0px;
+        }
+    }
+
+    &-box {
+        padding: 5px;
+        text-align: left;
+        margin: 5px;
+        position: relative;
+        border-radius: 5px;
+        max-width: 300px ;
+        word-wrap: break-word; 
+    }
+
+    &-reciver {
+        background-color: #a9a9a9;
+        &::after {
+            content: " ";
+            position: absolute;
+            right: -8px;
+            top: .5px;
+            border-radius: 5px;
+            border-top: 10px solid transparent;
+            border-right: none;
+            border-left: 10px solid #a9a9a9;
+            border-bottom: 10px solid transparent;
+        }
+
+    }
+
+    &-sender {
+        background-color: $color-primary;
+        &::after {
+            content: " ";
+            position: absolute;
+            left: -8px;
+            top: .5px;
+            border-radius: 5px;
+            border-top: 10px solid transparent;
+            border-right: 10px solid $color-primary;
+            border-left: none;
+            border-bottom: 10px solid transparent;
+        }
+    }
+}
+
+
+.box-input {
+    @include respond(tablet) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px 5px;
+        height: 30px;
+    }
+}

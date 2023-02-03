@@ -1,0 +1,42 @@
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-s{
+    @media (max-width: 20.5em) { @content};
+  }
+  @if $breakpoint == phone{
+    @media (max-width: 40.5em) { @content};
+  }
+  @if $breakpoint == tablet{// width:600
+    @media (max-width: 55em) { @content};
+  }
+  @if $breakpoint == labtop{// width:900
+    @media (max-width: 64em) { @content};
+  }
+  @if $breakpoint == desktop{// width:1200
+    @media (max-width: 112.5em) { @content};
+  }
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+    margin: 2px;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}

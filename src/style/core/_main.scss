@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700&display=swap');
+
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-image: $color-primary;
+  color: $color-white;
+  padding: $padding-margin-l;
+  background-color: $main-background;
+  font-family:  'Nunito' , Arial, Helvetica, sans-serif;
+  @include scrollbars(10px, $color-primary, $main-background);
+  @include respond(tablet) {
+    padding: 0;
+  }
+}
